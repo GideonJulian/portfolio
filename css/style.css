@@ -10,6 +10,7 @@ html {
   overflow-x: hidden;
   scroll-snap-type: mandatory;
   user-select: none;
+  user-zoom: none;
 }
 body {
   background: url(/images/page-bg.jpg) no-repeat center center fixed;
