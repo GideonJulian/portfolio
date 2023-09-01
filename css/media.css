@@ -1,0 +1,108 @@
+@media screen and (max-width: 720px) {
+  .nav {
+    display: none;
+  }
+  .hero {
+    display: flex;
+    flex-direction: column;
+  }
+  .hero h2 {
+    font-size: 35px;
+  }
+  .hero-info {
+    margin-top: 100px;
+    margin-left: 20px;
+    max-width: 300px;
+  }
+  .bar-icon{
+    display: block;
+    border-radius: 10px;
+    border: 1px solid #29d9d5;
+    cursor: pointer;
+    padding: 0;
+  }
+  .bar-icon #bars{
+    padding: 7px;
+    overflow: hidden;
+    transition: all .3s;
+  }
+  .bar-icon:hover #bars{
+    transform: scale(1.07);
+  }
+  .info-img {
+    width: 250px;
+    left: 2%;
+    top: 45%;
+  }
+  .see_more {
+    top: 42%;
+    left: 55%;
+  }
+  #about {
+    display: flex;
+    flex-direction: column;
+    height: 550px;
+  }
+  #about .text-box {
+    left: 0;
+    width: 90%;
+    text-align: center;
+  }
+  #about img {
+    width: 250px;
+    /* position: absolute; */
+    left: 15%;
+    bottom: 5%;
+  }
+  .text-box h2 {
+    font-size: 1.5rem;
+    left: 33%;
+  }
+  .text-box .continue {
+    left: 5%;
+  }
+
+  .text-box .line-1 {
+    width: 100px;
+    left: 35%;
+  }
+  .text-box p {
+    width: 200px;
+    margin-left: 70px;
+    margin-top: 70px;
+  }
+  .section-2 {
+    top: 30%;
+  }
+  .section-2,
+  .work,.my_goal {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .my_Sklll {
+    left: 33%;
+    margin-top: 60%;
+  }
+  .line-2 {
+    left: 28%;
+  }
+  .work .cards p {
+    font-size: 16px;
+  }
+  .footer .line-2{
+    left: 33%;
+  }
+  .footer .social-links{
+    left: 20%;
+  }
+  .contact{
+    margin-left: 25px;
+  }
+  .footer .contact h3{
+    font-size: 20px;
+    margin-bottom: 7px;
+  }
+  .footer .contact h3 span{
+    padding-left: 5px;
+  }
+}

@@ -1,319 +1,215 @@
-<!DOCTYPE h>
-<h lang="en">
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
-      rel="stylesheet"
-    />
-
-    <title>Know About Gideon</title>
-<!--
-Reflux Template
-https://templatemo.com/531-reflux
--->
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css" />
-    <link rel="stylesheet" href="assets/css/templatemo-style.css" />
-    <link rel="stylesheet" href="assets/css/owl.css" />
-    <link rel="stylesheet" href="assets/css/lightbox.css" />
-    <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css"> -->
-	<link href='//fonts.googleapis.com/css?family=Raleway:400,300,600,700' rel='stylesheet' type='text/css'>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="fontawesome-free-6.2.0-web/css/all.min.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <title>Document</title>
   </head>
-
   <body>
-    <div id="page-wraper">
-      <!-- Sidebar Menu -->
-      <div class="responsive-nav">
-        <i class="fa fa-bars" id="menu-toggle"></i>
-        <div id="menu" class="menu">
-          <i class="fa fa-times" id="menu-close"></i>
-          <div class="container">
-            <div class="image">
-              <a href="#"><img src="assets/images/author-image.jpg" class="img-fluid" alt="profile" /></a>
-            </div>
-            <div class="author-content">
-              <h4>
-                Gideon Bright
-              </h4>
-              <span>Web Designer</span>
-            </div>
-            <nav class="main-nav" role="navigation">
-              <ul class="main-menu">
-                <li><a href="#section1">About Me</a></li>
-                <li><a href="#section2">What I’m good at</a></li>
-                <li><a href="#section3">My Work</a></li>
-                <li><a href="#section4">Contact Me</a></li>
-  
-              </ul>
-            </nav>
-       
-            <div class="social-network">
-              <ul class="soial-icons">
-                <li>
-                  <a href="https://facebook.com/gideonjulian"
-                    >
-                    <i class="fa fa-facebook"></i
-                  >
-                </a>
-                </li>
-                <li>
-                  <a href="https://instagram.com/webcoder_7"><i class="fa fa-instagram"></i></a>
-                </li>
+    <div class="logo">
+      <h3>Gideon_Bright</h3>
+    </div>
+    <div class="bar-icon" onclick="openNav()">
+      <h3 class="fa fa-bars" id="bars"></h3>
+    </div>
+    <div class="nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#my_work">Projects</a></li>
+        <li><a href="#my_Sklll">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#my_work">Projects</a></li>
+      <li><a href="#my_Sklll">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </div>
+    <!-- hero section -->
 
-             <h3 class="tiktok">TIKTOK @WEBCODER7</h3>
-              </ul>
-            </div>
-          </div>
-        </div>
+    <div class="hero">
+      <div class="hero-info">
+        <h2>Nice to meet you i'm Gideon Bright</h2>
       </div>
-    
-      <section class="section about-me" data-section="section1">
-        <div class="container">
-          <div class="section-heading">
-            <h2>About Me</h2>
-            <div class="line-dec"></div>
-            <span
-              >I'm Gideon A web Developer Also a Business Logo maker. </span
-            >
-            <h2 class="goal">My goal</h2>
-            <div class="line-dec"></div>
-            <span>My goal as a front-end developer is to create engaging, responsive, and accessible websites that provide a seamless user experience. I aim to stay up-to-date with the latest trends and technologies in web development to deliver exceptional solutions that meet the needs of clients and end-users.</span>
-          </div>
-        </div>
-      </section>
-      <section class="section my-services" data-section="section2">
-        <div class="container">
-          <div class="section-heading">
-            <h2>What I’m good at?</h2>
-            <div class="line-dec"></div>
-            <span
-              >For Over 1 Years of Me As a web Developer i have Good Experience
-              in.</span
-            >
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="service-item">
-                <div class="first-service-icon service-icon"></div>
-                <h4>HTML5</h4>
-                <h4 class="progress-label">HTML5 <small class="progress-percent-small">100%</small></h4>
-            <div class="progress progress">
-              <div class="progress-bar progress-bar-danger"  aria-valuemin="0" style="width: 1000px;"></div>
-            </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="service-item">
-                <div class="second-service-icon service-icon"></div>
-                <h4> CSS3</h4>
-                <h4 class="progress-label">CSS <small class="progress-percent-small">80%</small></h4>
-                <div class="progress progress">
-                  <div class="progress-bar progress-bar-danger" aria-valuemin="0" style="width: 80%;"></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="service-item">
-                <div class="third-service-icon service-icon"></div>
-                <h4>Bootstrap</h4>
-                <h4 class="progress-label">Bootstrap <small class="progress-percent-small">70%</small></h4>
-            <div class="progress progress">
-              <div class="progress-bar progress-bar-danger" aria-valuemin="0" style="width: 90%;"></div>
-            </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="service-item">
-                <div class="fourth-service-icon service-icon"></div>
-                <h4>JavaScripth4>
-                  <h4 class="progress-label">JavaScript <small class="progress-percent-small">60%</small></h4>
-                  <div class="progress progress">
-                    <div class="progress-bar progress-bar-danger" aria-valuemin="0" style="width: 60%;"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div>
-      
-      </section>
-
-      <section class="section my-work" data-section="section3">
-        <div class="container">
-          <div class="section-heading">
-            <h2>My Work</h2>
-            <div class="line-dec"></div>
-            <span
-              >This are Services  i've Done for my client</span
-            >
-          </div>
-        
-          <div class="row">
-            <div class="isotope-wrapper">
-              <form class="isotope-toolbar">
-                <label
-                  ><input
-                    type="radio"
-                    data-type="*"
-                    checked=""
-                    name="isotope-filter"
-                  />
-                  <span>all</span></label
-                >
-  
-              <div class="isotope-box">
-                <div class="isotope-item" data-type="nature">
-                  <figure class="snip1321">
-                    <img
-                      src="assets/images/portfolio-01.png"
-                      alt="sq-sample26"
-                    />
-                    <figcaption>
-                
-                      <h4>Ecommerce Websites</h4>
-                      <span><a href="https://mizaram-store.netlify.app" style="color: black;">View</a></span>
-                    </figcaption>
-                  </figure>
-                </div>
-
-                <div class="isotope-item" data-type="people">
-                  <figure class="snip1321">
-                    <img
-                      src="assets/images/Screenshot (2).png"
-                      alt="sq-sample26"
-                    />
-                    <figcaption>
-           
-                      <h4>Beauty Store Website</h4>
-                      <span><a href="https://mizaram-store.netlify.app" style="color: black;">View</a></span>
-
-                    </figcaption>
-                  </figure>
-                </div>
-
-                <div class="isotope-item" data-type="animals">
-                  <figure class="snip1321">
-                    <img
-                      src="assets/images/portfolio-7.png"
-                      alt="sq-sample26"
-                    />
-                    <figcaption>
-                
-                      <h4>portfolio</h4>
-                      <span>Including this portfolio</span>
- 
-                    </figcaption>
-                  </figure>
-                </div>
-
-                <div class="isotope-item" data-type="people">
-                  <figure class="snip1321">
-                    <img
-                      src="assets/images/portfolio.png"
-                      alt="sq-sample26"
-                    />
-                    <figcaption>
-             
-                      <h4>Logo Design</h4>
-                        <span>Business Logos</span>
-                    </figcaption>
-                  </figure>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-      </section>
-
-     <section class="section contact-me" data-section="section4">
-      <div class="col-md-6 col-sm-6">					
-        <h2 class="title">My <strong>Profile</strong></h2>
-        <div class="name">
-          <h3>Name</h3>
-          <strong>Gideon Bright</strong>
-        </div>
-        <div class="name">
-          <h3>Phone</h3>
-          <strong>+234-70-499-28-664</strong>
-        </div>
-        <div class="name">
-          <h3>Address</h3>
-          <strong>3rd Avenue Gowon Estate Lagos</strong>
-        </div>
-      </div>
-   
-      </section>
-
-
+      <img src="images/img-4.jpg" class="info-img" />
+      <a class="see_more" href="#about">Kepp Going</a>
     </div>
 
-    <!-- Scripts -->
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <div id="about">
+      <img src="images/img-2.jpg" alt="" />
+      <div class="text-box">
+        <h2 class="header">About Me</h2>
+        <div class="line-1"></div>
+        <div class="lines">
+          <div class="line active"></div>
+          <div class="line"></div>
+        </div>
+        <p>
+          my Name Is Gideon Bright a Front-end Developer With Experience. As a
+          web Developer <span href="#my_goal">My Goal</span>
+        </p>
+        <a href="#my_goal" class="continue">Continue</a>
+      </div>
+    </div>
+    <h3 class="my_Sklll">My Goal</h3>
+    <div class="line-2"></div>
+    <div class="work my_goal" id="my_goal">
+      <div class="cards">
+        <div class="img-card">
+          <img src="/images/download (1).jpeg" alt="" />
+        </div>
+        <h3 class="web_name">Collaboration</h3>
+        <p>
+          As a Front-end Developer one of my goals is To be able to Collaborate
+          with other Developers
+        </p>
+      </div>
+      <div class="cards">
+        <div class="img-card">
+          <img src="/images/download.jpeg" alt="" />
+        </div>
+        <h3 class="web_name">Accessibility</h3>
+        <p>
+          Also making web content accessible to individuals withe disabilities
+        </p>
+      </div>
+      <div class="cards">
+        <div class="img-card">
+          <img src="/images/images.jpeg" alt="" />
+        </div>
+        <h3 class="web_name">Responsive</h3>
+        <p>
+          I am to ensure That the website is able to adapt to different screen
+          sizs
+        </p>
+      </div>
+    </div>
+    <h3 class="my_Sklll">Skill</h3>
+    <div class="line-2"></div>
+    <div class="section-2" id="my_Sklll">
+      <div class="box">
+        <div class="icons-html"></div>
+        <h3>HTML5</h3>
+        <div class="bar">
+          <div class="inner-bar"></div>
+        </div>
+      </div>
+      <div class="box">
+        <h3 class="fab fa-css3" id="css"></h3>
+        <h3>CSS</h3>
+        <div class="css">
+          <div class="bar">
+            <div class="inner-bar"></div>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <h3 class="fab fa-js" id="js"></h3>
+        <h3>JAVASCRIPT</h3>
+        <div class="js">
+          <div class="bar">
+            <div class="inner-bar"></div>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <h3 class="fab fa-bootstrap" id="boot"></h3>
 
-    <script src="assets/js/isotope.min.js"></script>
-    <script src="assets/js/owl-carousel.js"></script>
-    <script src="assets/js/lightbox.js"></script>
-    <script src="assets/js/custom.js"></script>
-    <script>
-      //according to loftblog tut
-      $(".main-menu li:first").addClass("active");
+        <h3>BOOTSTRAP</h3>
+        <div class="css">
+          <div class="bar">
+            <div class="inner-bar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3 class="my_Sklll" >My Work</h3>
+    <div class="line-2 work_line"></div>
+    <div class="work" id="my_work">
+      <div class="cards">
+        <div class="img-card">
+          <img src="/images/portfolio-01.png" alt="" />
+        </div>
+        <h3 class="web_name">Mizaram Store</h3>
+        <p>
+          An Ecmmerce Wrbsite created with HTML CSS BOOTSTRAP and JAVASCRIPT
+        </p>
+        <a href="https://mizaram-store.netlify.app" class="view">view Site</a>
+      </div>
+      <div class="cards">
+        <div class="img-card">
+          <img src="/images/portfolio-02.png" alt="" />
+        </div>
+        <h3 class="web_name">Mizaram Store</h3>
+        <p>
+          An Ecmmerce Website created with HTML CSS BOOTSTRAP and JAVASCRIPT
+        </p>
+        <a href="#" class="view">view Site</a>
+      </div>
+      <div class="cards">
+        <div class="img-card">
+          <img src="/images/portfolio-7.png" alt="" />
+        </div>
+        <h3 class="web_name">portfolios</h3>
+        <p>created portfolios Website with HTML CSS BOOTSTRAP and JAVASCRIPT</p>
+        <a href="#" class="view">view Site</a>
+      </div>
+      <div class="cards">
+        <div class="img-card">
+          <img src="/images/Screenshot (2).png" alt="" />
+        </div>
+        <h3 class="web_name">Mizaram Store</h3>
+        <p>A Travel created with HTML CSS BOOTSTRAP and JAVASCRIPT</p>
+        <a href="#" class="view">view Site</a>
+      </div>
+    </div>
+    <footer class="footer" id="contact">
+      <div class="footer-wrapper">
+        <h3 class="footer-header">Contact Me</h3>
+        <div class="line-2"></div>
 
-      var showSection = function showSection(section, isAnimate) {
-        var direction = section.replace(/#/, ""),
-          reqSection = $(".section").filter(
-            '[data-section="' + direction + '"]'
-          ),
-          reqSectionPos = reqSection.offset().top - 0;
+        <div class="social-links">
+          <a href="#" class="fab fa-tiktok" id="links"></a>
+          <a
+            href="https://ww.facebook.com/profile.php?id=61550572181358"
+            class="fab fa-facebook"
+            id="links"
+          ></a>
+          <a
+            href="
 
-        if (isAnimate) {
-          $("body, h").animate(
-            {
-              scrollTop: reqSectionPos
-            },
-            800
-          );
-        } else {
-          $("body, h").scrollTop(reqSectionPos);
-        }
-      };
+          https://instagram.com/webcoder_7?utm_source=qr&igshid=NGExMmI2YTkyZg%3D%3D"
+            class="fab fa-instagram"
+            id="links"
+          ></a>
+          <a
+            href="https://wa.me/2347049928664"
+            class="fab fa-whatsapp"
+            id="links"
+          ></a>
+        </div>
 
-      var checkSection = function checkSection() {
-        $(".section").each(function() {
-          var $this = $(this),
-            topEdge = $this.offset().top - 80,
-            bottomEdge = topEdge + $this.height(),
-            wScroll = $(window).scrollTop();
-          if (topEdge < wScroll && bottomEdge > wScroll) {
-            var currentId = $this.data("section"),
-              reqLink = $("a").filter("[href*=\\#" + currentId + "]");
-            reqLink
-              .closest("li")
-              .addClass("active")
-              .siblings()
-              .removeClass("active");
-          }
-        });
-      };
-
-      $(".main-menu").on("click", "a", function(e) {
-        e.preventDefault();
-        showSection($(this).attr("href"), true);
-      });
-
-      $(window).scroll(function() {
-        checkSection();
-      });
-    </script>
+        <div class="contact">
+          <h3>Name: <span>Gieon Bright</span></h3>
+          <h3>Number: <span>+234 70 499 38 664</span></h3>
+          <h3 class="email">Email: <span>gideonchinonso77@gmail.com</span></h3>
+        </div>
+      </div>
+    </footer>
+    <!-- script -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
-</h>
+</html>
