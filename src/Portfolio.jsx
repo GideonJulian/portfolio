@@ -245,11 +245,25 @@ function BottomNav() {
 
   return (
     <nav className="bottom-nav">
-      {NAV_ITEMS.map(({ label, href }) => {
+      {NAV_ITEMS.map(({ label, href, icon }) => {
         const id = label.toLowerCase();
+
         return (
-          <a key={id} href={href} onClick={() => setActive(id)}>
-            {label}
+          <a
+            key={id}
+            href={href}
+            className={`bottom-nav__item${
+              active === id ? " bottom-nav__item--active" : ""
+            }`}
+            onClick={() => setActive(id)}
+          >
+            {/* ✅ ICON */}
+            <span className="bottom-nav__icon material-symbols-outlined">
+              {icon}
+            </span>
+
+            {/* ✅ LABEL */}
+            <span className="bottom-nav__label">{label}</span>
           </a>
         );
       })}
