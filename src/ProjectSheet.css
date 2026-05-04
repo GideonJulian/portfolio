@@ -1,5 +1,7 @@
 /* ── ProjectSheet.css ── */
-
+html {
+  overflow-x: hidden;
+}
 /* Overlay */
 .sheet-overlay {
   position: fixed;
