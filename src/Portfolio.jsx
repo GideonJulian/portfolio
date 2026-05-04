@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./index.css";
+import ProjectSheet from "./components/ProjectSheet"; // ✅ import your modal
 
 // ── Data ─────────────────────────────────────────────────────────────────────
 const PROJECTS = [
@@ -65,18 +66,14 @@ function Hero() {
   return (
     <section className="hero">
       <div className="hero__layout">
-        {/* Text side */}
         <div className="hero__content">
           <h1 className="hero__name">Gideon Chinonso</h1>
           <p className="hero__title">Fullstack Developer</p>
           <p className="hero__bio">
-            Building technical architectures with an editorial focus. I
-            specialise in crafting lean, high-performance systems that treat
-            digital space as a curated gallery of functional artifacts.
+            Building technical architectures with an editorial focus.
           </p>
         </div>
 
-        {/* Portrait */}
         <div className="hero__image-wrap">
           <img
             className="hero__image"
@@ -89,13 +86,18 @@ function Hero() {
   );
 }
 
-function Work() {
+/* ✅ ONLY CHANGE HERE: added onSelect */
+function Work({ onSelect }) {
   return (
     <section className="work" id="work">
       <p className="section-label">Selected Work</p>
       <div className="work__list">
         {PROJECTS.map((project) => (
-          <article className="project" key={project.id}>
+          <article
+            className="project"
+            key={project.id}
+            onClick={() => onSelect(project)} // ✅ trigger modal
+          >
             <div className="project__thumbnail">
               <img src={project.image} alt={project.alt} />
             </div>
@@ -133,13 +135,7 @@ function About() {
       <div className="about__body">
         <p>
           My approach is rooted in the philosophy that software should be as
-          durable and well-considered as physical architecture. I avoid the
-          noise of fleeting trends to focus on fundamental performance and
-          elegant maintainability.
-        </p>
-        <p>
-          Based in a quiet studio, I collaborate with thinkers and makers to
-          translate complex requirements into quiet, effective digital tools.
+          durable and well-considered as physical architecture.
         </p>
       </div>
     </section>
@@ -147,23 +143,9 @@ function About() {
 }
 
 function Contact() {
-  const links = [
-    { label: "Email", href: "mailto:hello@gideon.dev" },
-    { label: "LinkedIn", href: "#" },
-    { label: "GitHub", href: "#" },
-    { label: "Read CV", href: "#" },
-  ];
-
   return (
     <section className="contact" id="contact">
       <p className="section-label">Connect</p>
-      <nav className="contact__links">
-        {links.map(({ label, href }) => (
-          <a className="contact__link" href={href} key={label}>
-            {label}
-          </a>
-        ))}
-      </nav>
     </section>
   );
 }
@@ -171,23 +153,7 @@ function Contact() {
 function Footer() {
   return (
     <footer className="footer">
-      <div className="footer__inner">
-        <p className="footer__tagline">Curated Artifacts</p>
-        <nav className="footer__nav">
-          <a className="footer__nav-link" href="#">
-            GitHub
-          </a>
-          <a className="footer__nav-link" href="#">
-            LinkedIn
-          </a>
-          <a className="footer__nav-link" href="#">
-            Source
-          </a>
-        </nav>
-        <p className="footer__copy">
-          © {new Date().getFullYear()} Gideon Chinonso
-        </p>
-      </div>
+      <p>© {new Date().getFullYear()} Gideon Chinonso</p>
     </footer>
   );
 }
@@ -197,19 +163,11 @@ function BottomNav() {
 
   return (
     <nav className="bottom-nav">
-      {NAV_ITEMS.map(({ label, href, icon }) => {
+      {NAV_ITEMS.map(({ label, href }) => {
         const id = label.toLowerCase();
         return (
-          <a
-            key={id}
-            href={href}
-            className={`bottom-nav__item${active === id ? " bottom-nav__item--active" : ""}`}
-            onClick={() => setActive(id)}
-          >
-            <span className="bottom-nav__icon material-symbols-outlined">
-              {icon}
-            </span>
-            <span className="bottom-nav__label">{label}</span>
+          <a key={id} href={href} onClick={() => setActive(id)}>
+            {label}
           </a>
         );
       })}
@@ -217,16 +175,18 @@ function BottomNav() {
   );
 }
 
-// ── Root component ────────────────────────────────────────────────────────────
+// ── Root ──────────────────────────────────────────────────────────────────────
 
 export default function Portfolio() {
+  const [selectedProject, setSelectedProject] = useState(null); // ✅ state added
+
   return (
     <>
       <Header />
 
       <main className="main container">
         <Hero />
-        <Work />
+        <Work onSelect={setSelectedProject} />
         <Skills />
         <About />
         <Contact />
@@ -234,6 +194,12 @@ export default function Portfolio() {
 
       <Footer />
       <BottomNav />
+
+      {/* ✅ mount your ProjectSheet */}
+      <ProjectSheet
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
     </>
   );
 }

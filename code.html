@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed-dim": "#c9c6c2",
+                    "outline-variant": "#c4c7c7",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#000000",
+                    "surface-dim": "#ddd9d4",
+                    "on-secondary": "#ffffff",
+                    "inverse-on-surface": "#f4f0ea",
+                    "surface": "#fdf9f3",
+                    "surface-container-low": "#f7f3ed",
+                    "on-background": "#1c1c18",
+                    "tertiary-fixed-dim": "#bacbbe",
+                    "on-surface-variant": "#444748",
+                    "inverse-surface": "#31302c",
+                    "outline": "#747878",
+                    "tertiary-fixed": "#d6e7d9",
+                    "on-secondary-fixed-variant": "#474743",
+                    "tertiary-container": "#111e16",
+                    "primary-container": "#1c1b1b",
+                    "primary": "#000000",
+                    "on-surface": "#1c1c18",
+                    "secondary-fixed": "#e5e2dd",
+                    "on-primary-fixed-variant": "#474746",
+                    "on-secondary-container": "#656461",
+                    "secondary-container": "#e5e2dd",
+                    "surface-tint": "#5f5e5e",
+                    "background": "#fdf9f3",
+                    "secondary": "#5f5e5b",
+                    "on-secondary-fixed": "#1c1c19",
+                    "inverse-primary": "#c8c6c5",
+                    "on-primary-container": "#858383",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "on-tertiary-fixed-variant": "#3b4a40",
+                    "surface-container-highest": "#e6e2dc",
+                    "on-tertiary-container": "#78887c",
+                    "surface-container-high": "#ece8e2",
+                    "primary-fixed": "#e5e2e1",
+                    "on-primary-fixed": "#1c1b1b",
+                    "on-tertiary-fixed": "#111e16",
+                    "on-error": "#ffffff",
+                    "surface-container": "#f1ede7",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-variant": "#e6e2dc",
+                    "surface-bright": "#fdf9f3",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-xl": "128px",
+                    "stack-lg": "64px",
+                    "stack-sm": "16px",
+                    "stack-md": "32px",
+                    "unit": "4px",
+                    "container-padding": "24px"
+            },
+            "fontFamily": {
+                    "headline-xl": ["Newsreader"],
+                    "body-md": ["Manrope"],
+                    "label-sm": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "headline-md": ["Newsreader"],
+                    "headline-lg": ["Newsreader"]
+            },
+            "fontSize": {
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .bottom-sheet {
+            transform: translateY(100%);
+            transition: transform 400ms cubic-bezier(0.33, 1, 0.68, 1);
+        }
+        .bottom-sheet.active {
+            transform: translateY(0);
+        }
+        .underline-reveal:hover::after {
+            width: 100%;
+        }
+        .underline-reveal::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: currentColor;
+            transition: width 200ms ease-out;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<!-- Background Content (Simulated Main Site) -->
+<header class="bg-stone-50 dark:bg-stone-950 border-b border-stone-200 dark:border-stone-800 docked full-width top-0 z-50">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-[680px] mx-auto">
+<span class="font-newsreader font-bold text-xl uppercase tracking-widest text-stone-900 dark:text-stone-50">PORTFOLIO</span>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-stone-900 dark:text-stone-50">menu</span>
+<span class="material-symbols-outlined text-stone-900 dark:text-stone-50">mail</span>
+</div>
+</div>
+</header>
+<main class="max-w-[680px] mx-auto px-6 pt-stack-lg pb-stack-xl">
+<div class="space-y-stack-lg">
+<section>
+<p class="font-label-sm text-secondary uppercase mb-2">Featured Project</p>
+<h1 class="font-headline-xl text-primary mb-stack-sm">The Archival River</h1>
+<div class="w-full aspect-video bg-surface-container-highest mb-stack-md">
+<img alt="Tech Hardware Archive" class="w-full h-full object-cover desaturate hover:saturate-100 transition-all duration-500" data-alt="A meticulously arranged collection of vintage high-end technology components and monochrome architectural drafting tools on a clean white surface. The lighting is soft and directional, casting long, elegant shadows that emphasize the minimalist editorial aesthetic. The color palette is strictly stone, charcoal, and soft whites, evoking a sense of calm precision and archival quality. This high-contrast image captures the intersection of technical design and artistic curation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5reS3OhtPpPl1gdoczlJlnHQgzqywie31yM_JRxEWo-iLIiLVWvmDl_MWryceHfxIi2iIGszhzQ2xEMpMzvWFkpPOxJuTf646GzJBYUZQdUsQE3mErUYSUCUIZ4VKzmxsio8rB_sMdC4T2__mR0g9jh-gwJSZbfJ2DcGin5YRmn22_BSwc6FXVH9EialpnCWIoRIP64dQwyTC6WZzKsm_iaZ0T049L3XOXtJQQowxLCP_FklplDmZ16vg9hZZyFJlTbohjfvHPfM"/>
+</div>
+</section>
+</div>
+</main>
+<!-- Project Detail Bottom Sheet -->
+<div class="fixed inset-0 z-[60] flex items-end" id="projectSheet">
+<!-- Transparent backdrop instead of dark overlay to maintain calm light aesthetic -->
+<div class="absolute inset-0 bg-background/40 backdrop-blur-[2px]"></div>
+<div class="bottom-sheet active relative w-full max-w-[680px] mx-auto bg-surface-container-lowest border-x border-t border-outline-variant shadow-[0_-20px_50px_-12px_rgba(0,0,0,0.05)] h-[813px] overflow-y-auto">
+<!-- Handle / Close -->
+<div class="sticky top-0 bg-surface-container-lowest/90 backdrop-blur-md px-6 py-4 flex justify-between items-center z-10">
+<div class="w-8 h-[2px] bg-outline-variant rounded-full mx-auto absolute left-1/2 -translate-x-1/2 top-2"></div>
+<button class="font-label-sm text-primary uppercase flex items-center gap-2 group">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+                    Close
+                </button>
+<span class="font-label-sm text-secondary uppercase">Project Details</span>
+</div>
+<div class="px-6 py-stack-md space-y-stack-md">
+<!-- Header Info -->
+<header>
+<div class="flex gap-2 mb-2">
+<span class="bg-surface-container-highest text-secondary px-2 py-0.5 font-label-sm uppercase tracking-wider">Web Application</span>
+<span class="bg-surface-container-highest text-secondary px-2 py-0.5 font-label-sm uppercase tracking-wider">2024</span>
+</div>
+<h2 class="font-headline-lg text-primary">The Archival River</h2>
+<p class="font-body-lg text-secondary italic mt-2">A high-fidelity digital library for architectural monographs and technical blueprints.</p>
+</header>
+<!-- Detailed Project Image -->
+<div class="w-full aspect-[4/3] bg-surface-container-highest">
+<img alt="Detailed UI View" class="w-full h-full object-cover" data-alt="A detailed, close-up view of a minimalist user interface displayed on a high-resolution tablet screen. The UI features sophisticated typography using Newsreader and Manrope fonts, with a focus on archival data and architectural sketches. The scene is bathed in natural, bright daylight in a modern, airy office environment. The primary colors are soft grays, off-whites, and deep charcoal, reflecting the editorial and archival brand identity of the project." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvSyTHo8yuAwfC7PEZWU9XIqSgFsArrknj98bmO_SOjPmJSeghAoufF_0j1fATQW133MkMUIXxyq7bgMnhs4Fe7HLQkup1RL2teKtx3C-0llm6JErnx3D0-HJwwuBb9qiW0e2XdxSZ2sMFjbryo_yt_aM4TL61g7tSB1td1gSR6QKKgvzobWnfMh-90giL4dF-PkzimRA61r_D43axo0t2h43wqVWQT9efXWZX12F9D-mOxgsa64LKhDtcugCv0HjKeeevhPnB6Tg"/>
+</div>
+<!-- Build & Challenges Section -->
+<section class="space-y-stack-sm">
+<h3 class="font-headline-md text-primary">The Build</h3>
+<p class="font-body-md text-on-surface-variant">
+                        The core objective was to create a digital experience that mirrors the tactile quality of a physical monograph. We utilized a headless CMS architecture to allow for flexible content modeling while maintaining a strict single-column layout. The front-end is powered by Next.js, leveraging server-side rendering to ensure instantaneous load times for high-resolution archival scans.
+                    </p>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="font-label-sm text-secondary uppercase bg-surface-container-high px-3 py-1">React</span>
+<span class="font-label-sm text-secondary uppercase bg-surface-container-high px-3 py-1">TypeScript</span>
+<span class="font-label-sm text-secondary uppercase bg-surface-container-high px-3 py-1">Tailwind CSS</span>
+<span class="font-label-sm text-secondary uppercase bg-surface-container-high px-3 py-1">Framermotion</span>
+</div>
+</section>
+<hr class="border-outline-variant"/>
+<section class="space-y-stack-sm">
+<h3 class="font-headline-md text-primary">Challenges</h3>
+<p class="font-body-md text-on-surface-variant">
+                        The primary technical hurdle was the performance optimization of a high-volume image library. We developed a custom image-loading strategy that prioritizes the "river" of content, loading desaturated placeholders to maintain visual rhythm while high-contrast versions are fetched. This prevents layout shift and maintains the calm, archival aesthetic during interaction.
+                    </p>
+</section>
+<!-- Actions -->
+<div class="flex flex-col gap-4 pt-stack-sm pb-stack-lg">
+<button class="w-full bg-primary text-on-primary py-4 font-label-sm uppercase tracking-widest hover:bg-[#4F7942] transition-colors duration-150">
+                        Live Demo
+                    </button>
+<button class="w-full border border-primary text-primary py-4 font-label-sm uppercase tracking-widest hover:bg-surface-container transition-colors duration-150">
+                        View Source
+                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Navigation Shell (Shared Components) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-safe bg-stone-50/95 dark:bg-stone-950/95 backdrop-blur-md border-t border-stone-200 dark:border-stone-800 z-50">
+<a class="flex flex-col items-center justify-center text-[#4F7942] dark:text-[#88B04B] py-2 border-t-2 border-[#4F7942] dark:border-[#88B04B]" href="#">
+<span class="material-symbols-outlined" data-icon="folder_special">folder_special</span>
+<span class="font-newsreader text-[10px] uppercase tracking-tighter">Work</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 py-2 border-t-2 border-transparent hover:text-[#4F7942] dark:hover:text-[#88B04B] transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+<span class="font-newsreader text-[10px] uppercase tracking-tighter">Skills</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 py-2 border-t-2 border-transparent hover:text-[#4F7942] dark:hover:text-[#88B04B] transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="fingerprint">fingerprint</span>
+<span class="font-newsreader text-[10px] uppercase tracking-tighter">About</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 py-2 border-t-2 border-transparent hover:text-[#4F7942] dark:hover:text-[#88B04B] transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-newsreader text-[10px] uppercase tracking-tighter">Contact</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="w-full py-12 mb-20 bg-stone-100 dark:bg-stone-900 border-t border-stone-200 dark:border-stone-800">
+<div class="flex flex-col items-center justify-center gap-6 max-w-[680px] mx-auto px-6 text-center">
+<span class="font-newsreader italic text-sm text-stone-900 dark:text-stone-50">CURATED ARTIFACTS</span>
+<div class="flex gap-8">
+<a class="font-newsreader text-xs uppercase tracking-[0.2em] text-stone-500 hover:text-stone-900 transition-all duration-200 underline-reveal relative" href="#">GitHub</a>
+<a class="font-newsreader text-xs uppercase tracking-[0.2em] text-stone-500 hover:text-stone-900 transition-all duration-200 underline-reveal relative" href="#">LinkedIn</a>
+<a class="font-newsreader text-xs uppercase tracking-[0.2em] text-stone-500 hover:text-stone-900 transition-all duration-200 underline-reveal relative" href="#">Source</a>
+</div>
+<p class="font-newsreader text-xs uppercase tracking-[0.2em] text-stone-600 dark:text-stone-400">© 2024 CURATED ARTIFACTS</p>
+</div>
+</footer>
+</body></html>
