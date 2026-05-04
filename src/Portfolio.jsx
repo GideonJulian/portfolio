@@ -196,10 +196,13 @@ export default function Portfolio() {
       <BottomNav />
 
       {/* ✅ mount your ProjectSheet */}
-      <ProjectSheet
-        project={selectedProject}
-        onClose={() => setSelectedProject(null)}
-      />
+      <div className="">
+        {" "}
+        <ProjectSheet
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
+      </div>
     </>
   );
 }

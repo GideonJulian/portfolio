@@ -38,7 +38,7 @@ export default function ProjectSheet({ project, onClose }) {
 
   return (
     <div
-      className={`sheet-overlay${closing ? " closing" : ""}`}
+      className={`sheet-overlay${closing ? " closing" : ""} mb-80`}
       onClick={(e) => {
         if (e.target === e.currentTarget) handleClose();
       }}
