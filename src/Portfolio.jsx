@@ -44,20 +44,21 @@ const PROJECTS = [
   },
   {
     id: 2,
-    name: "Saltuco",
+    name: "Artful Nest",
     desc: "Beautiful website for making handmade products created with",
-    lang: "React.js + Node.js + TailwindCSS + Framer-motion",
-    link: "https://saltusco.com",
+    lang: "React.js + Node.js + TailwindCSS",
+    link: "https://artful-nest.netlify.app/",
     image: "/pro2.jpg",
     year: 2026,
   },
   {
     id: 3,
-    name: "Mizaram",
+    name: "Saltusco",
     desc: "A Fullstack Online Skincare store",
     lang: "React.js + Supabase + TailwindCSS + Framer + Google stitch Ai",
     link: "https://mizaram.vercel.app/",
-    image: "/pro3.jpg",
+    
+     image: "/pro4.png",
     year: 2025,
   },
   {
@@ -66,15 +67,12 @@ const PROJECTS = [
     desc: "Web3 / Crypto WebApp",
     lang: "React.js + Node.js + TailwindCSS + Lucid-react",
     link: "https://qf-isecure.vercel.app/",
-    image: "/pro4.png",
+   image: "/pro7.png",
     year: 2023,
   },
   // {
   //   id: 5,
-  //   name: "Artful Nest",
-  //   desc: "Beautiful website for making handmade products created with",
-  //   lang: "React.js + Node.js + TailwindCSS",
-  //   link: "https://artful-nest.netlify.app/",
+
   //   image: "/pro5.png",
   //   year: 2026,
   // },
@@ -84,7 +82,7 @@ const PROJECTS = [
     desc: "A Online Resturant With great Menu",
     lang: "React.js + Node.js + TailwindCSS",
     link: "https://koyo-foods.netlify.app/",
-    image: "/pro6.jpg",
+   image: "/pro3.jpg",
     year: 2025,
   },
   // {
