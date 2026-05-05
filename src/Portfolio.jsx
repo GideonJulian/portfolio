@@ -68,6 +68,7 @@ const SKILLS = [
   { name: "Tailwind", icon: <SiTailwindcss /> },
   { name: "GSAP", icon: <SiGreensock /> },
   { name: "Figma", icon: <FaFigma /> },
+  { name: "React Native", icon: <FaReact /> },
   { name: "Supabase", icon: <SiSupabase /> },
   { name: "MongoDB", icon: <SiMongodb /> },
   { name: "Postman", icon: <SiPostman /> },
@@ -78,7 +79,7 @@ function Header() {
   return (
     <header className="header">
       <div className="header__inner">
-        <img src="/favicon.png" alt="Logo" className="w-8 rounded-full"/>
+        <img src="/favicon.png" alt="Logo" className="w-8 rounded-full" />
         <span className="header__logo">Portfolio</span>
       </div>
     </header>
@@ -245,21 +246,41 @@ function Skills() {
 
 // ── CONTACT ──────────────────────────────────────────────────────────────────
 function Contact() {
+  const links = [
+    {
+      name: "Email",
+      href: "mailto:gideonchinonso77@gmail.com",
+    },
+    {
+      name: "LinkedIn",
+      href: "https://linkedin.com/in/gideon-chinonso",
+    },
+    {
+      name: "GitHub",
+      href: "https://github.com/GideonJulian/",
+    },
+  ];
+
   return (
     <section id="contact">
       <p className="section-label">Connect</p>
 
       <div className="contact__links">
-        {["Email", "LinkedIn", "GitHub"].map((item) => (
-          <motion.a key={item} whileHover={{ x: 6 }} href="#">
-            {item} ↗
+        {links.map((item) => (
+          <motion.a
+            key={item.name}
+            whileHover={{ x: 6 }}
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {item.name} ↗
           </motion.a>
         ))}
       </div>
     </section>
   );
 }
-
 // ── FOOTER ───────────────────────────────────────────────────────────────────
 function Footer() {
   return (
