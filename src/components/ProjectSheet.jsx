@@ -1,5 +1,6 @@
 import { useEffect, useCallback, useState } from "react";
-import './../ProjectSheet.css'
+import "./../ProjectSheet.css";
+
 export default function ProjectSheet({ project, onClose }) {
   const [closing, setClosing] = useState(false);
 
@@ -8,17 +9,15 @@ export default function ProjectSheet({ project, onClose }) {
     setTimeout(() => {
       setClosing(false);
       onClose();
-    }, 350);
+    }, 300);
   }, [onClose]);
 
   // ESC key
   useEffect(() => {
     if (!project) return;
-
     const handler = (e) => {
       if (e.key === "Escape") handleClose();
     };
-
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
   }, [project, handleClose]);
@@ -30,7 +29,6 @@ export default function ProjectSheet({ project, onClose }) {
     } else {
       document.body.classList.remove("sheet-open");
     }
-
     return () => document.body.classList.remove("sheet-open");
   }, [project]);
 
@@ -38,49 +36,58 @@ export default function ProjectSheet({ project, onClose }) {
 
   return (
     <div
-      className={`sheet-overlay${closing ? " closing" : ""} mb-80`}
+      className={`sheet-overlay ${closing ? "closing" : ""}`}
       onClick={(e) => {
         if (e.target === e.currentTarget) handleClose();
       }}
     >
-      <div className={`sheet-panel${closing ? " closing" : ""}`}>
-        
+      <div className={`sheet-panel ${closing ? "closing" : ""}`}>
+
         {/* Top bar */}
         <div className="sheet-topbar">
-          <button onClick={handleClose}>Close</button>
+          <button onClick={handleClose} className="sheet-close">
+            Close
+          </button>
         </div>
 
         {/* Content */}
         <div className="sheet-body">
-          <h2>{project.name}</h2>
-          <p>{project.subtitle}</p>
 
-          <img src={project.image} alt={project.name} />
+          {/* Header */}
+          <div className="sheet-header">
+            <h2 className="sheet-title">{project.name}</h2>
+            <span className="sheet-year">{project.year}</span>
+          </div>
 
-          <h3>The Build</h3>
-          <p>{project.buildDesc}</p>
+          {/* Image */}
+          <div className="sheet-image-wrap">
+            <img src={project.image} alt={project.name} />
+          </div>
 
-          <div>
-            {project.techStack?.map((tech) => (
-              <span key={tech}>{tech}</span>
+          {/* Description */}
+          <p className="sheet-desc">
+            {project.desc}
+          </p>
+
+          {/* Stack */}
+          <div className="sheet-stack">
+            {project.lang.split("+").map((tech) => (
+              <span key={tech.trim()} className="sheet-tag">
+                {tech.trim()}
+              </span>
             ))}
           </div>
 
-          <h3>Challenges</h3>
-          <p>{project.challenges}</p>
+          {/* Divider */}
+          <div className="sheet-divider" />
 
-          <div>
-            {project.liveUrl && (
-              <a href={project.liveUrl} target="_blank">
-                Live Demo
-              </a>
-            )}
-            {project.sourceUrl && (
-              <a href={project.sourceUrl} target="_blank">
-                Source
-              </a>
-            )}
+          {/* Actions */}
+          <div className="sheet-actions">
+            <a href={project.link} target="_blank" rel="noopener noreferrer">
+              View Project ↗
+            </a>
           </div>
+
         </div>
       </div>
     </div>
