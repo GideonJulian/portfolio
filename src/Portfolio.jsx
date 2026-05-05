@@ -57,8 +57,8 @@ const PROJECTS = [
     desc: "A Fullstack Online Skincare store",
     lang: "React.js + Supabase + TailwindCSS + Framer + Google stitch Ai",
     link: "https://mizaram.vercel.app/",
-    
-     image: "/pro4.png",
+
+    image: "/pro4.png",
     year: 2025,
   },
   {
@@ -67,7 +67,7 @@ const PROJECTS = [
     desc: "Web3 / Crypto WebApp",
     lang: "React.js + Node.js + TailwindCSS + Lucid-react",
     link: "https://qf-isecure.vercel.app/",
-   image: "/pro7.png",
+    image: "/pro7.png",
     year: 2023,
   },
   // {
@@ -82,7 +82,7 @@ const PROJECTS = [
     desc: "A Online Resturant With great Menu",
     lang: "React.js + Node.js + TailwindCSS",
     link: "https://koyo-foods.netlify.app/",
-   image: "/pro3.jpg",
+    image: "/pro3.jpg",
     year: 2025,
   },
   // {
@@ -115,12 +115,14 @@ const PROJECTS = [
 ];
 const SKILLS = [
   "TypeScript",
-  "React / Next.js",
+  "JavaScript",
+  "React",
   "Node.js",
-  "Rust",
-  "PostgreSQL",
-  "Docker",
-  "AWS",
+  "Postman",
+  "TailwindCSS",
+  "Framer Motion",
+  "Supabase",
+  "Web3",
 ];
 
 const NAV_ITEMS = [
@@ -150,7 +152,8 @@ function Hero() {
           <h1 className="hero__name">Gideon Chinonso</h1>
           <p className="hero__title">Fullstack Developer</p>
           <p className="hero__bio">
-            Building technical architectures with an editorial focus.
+            I build and collaborate on technical architectures with an editorial
+            focus—crafting systems that are both functional and considered
           </p>
         </div>
 
