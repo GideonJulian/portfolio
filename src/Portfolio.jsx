@@ -188,7 +188,7 @@ function Work({ onSelect }) {
               <h3 className="project__name">{project.name}</h3>
               <span className="project__year">{project.year}</span>
             </div>
-            <p className="project__stack">{project.stack}</p>
+            <p className="project__stack">{project.lang}</p>
           </article>
         ))}
       </div>
@@ -228,8 +228,59 @@ function About() {
 
 function Contact() {
   return (
-    <section className="contact" id="contact">
-      <p className="section-label">Connect</p>
+    <section className="mb-stack-xl" id="contact">
+      <h2 className="font-label-sm text-label-sm uppercase tracking-widest mb-stack-md opacity-50">
+        Connect
+      </h2>
+
+      {/* Intro line */}
+      <p className="font-serif text-lg mb-6 max-w-md text-text-secondary">
+        Open to thoughtful collaboration, interesting ideas, and meaningful
+        conversations. If something resonates, feel free to reach out.
+      </p>
+
+      {/* Links */}
+      <div className="flex flex-col gap-5">
+        <a
+          className="group flex items-center justify-between font-headline-md text-headline-md"
+          href="mailto:hello@julianrivers.com"
+        >
+          <span className="reveal-underline">Email</span>
+          <span className="opacity-40 group-hover:opacity-100 transition">
+            ↗
+          </span>
+        </a>
+
+        <a
+          className="group flex items-center justify-between font-headline-md text-headline-md"
+          href="#"
+        >
+          <span className="reveal-underline">LinkedIn</span>
+          <span className="opacity-40 group-hover:opacity-100 transition">
+            ↗
+          </span>
+        </a>
+
+        <a
+          className="group flex items-center justify-between font-headline-md text-headline-md"
+          href="#"
+        >
+          <span className="reveal-underline">GitHub</span>
+          <span className="opacity-40 group-hover:opacity-100 transition">
+            ↗
+          </span>
+        </a>
+
+        <a
+          className="group flex items-center justify-between font-headline-md text-headline-md"
+          href="#"
+        >
+          <span className="reveal-underline">Read CV</span>
+          <span className="opacity-40 group-hover:opacity-100 transition">
+            ↗
+          </span>
+        </a>
+      </div>
     </section>
   );
 }
