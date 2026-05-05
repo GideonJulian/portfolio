@@ -49,6 +49,17 @@ const PROJECTS = [
     story:
       "Designed to feel warm and expressive, helping handmade products feel more personal and premium.",
   },
+  {
+    id: 3,
+    name: "koyo foods",
+    desc: "Online food restaurant with a modern feel",
+    lang: "React.js + Node.js + TailwindCSS + Framer Motion",
+    link: "https://koyo-foods.netlify.app/",
+    image: "/pro3.jpg",
+    year: 2025,
+    story:
+      "A modern handcrafted platform with smooth animations and premium UI feel.",
+  },
 ];
 
 const SKILLS = [
@@ -118,7 +129,8 @@ function About() {
       <div className="about__card">
         <p className="about__text">
           I’m an <strong>18-year-old Fullstack Developer</strong> with{" "}
-          <strong>3+ years</strong> of experience building modern web & app systems.
+          <strong>3+ years</strong> of experience building modern web & app
+          systems.
         </p>
 
         <p className="about__text">
@@ -127,66 +139,36 @@ function About() {
         </p>
 
         <div className="about__highlights">
-          <span><FaUser /> 18 Years</span>
-          <span><FaBriefcase /> 3+ Years Exp</span>
-          <span><FaUsers /> Collaboration</span>
-          <span><FaBookOpen /> Learning</span>
-          <span><FaRocket /> Problem Solving</span>
+          <span>
+            <FaUser /> 18 Years
+          </span>
+          <span>
+            <FaBriefcase /> 3+ Years Exp
+          </span>
+          <span>
+            <FaUsers /> Collaboration
+          </span>
+          <span>
+            <FaBookOpen /> Learning
+          </span>
+          <span>
+            <FaRocket /> Problem Solving
+          </span>
         </div>
       </div>
     </section>
   );
 }
-
-// ── WORK (GSAP SCROLL STACK EFFECT) ──────────────────────────────────────────
+// ── WORK (FIXED STACK EFFECT) ───────────────────────────────────────────────
 function Work({ onSelect }) {
-  const sectionRef = useRef();
-  const cardsRef = useRef([]);
-
-  useEffect(() => {
-    const cards = cardsRef.current;
-
-    gsap.set(cards, { opacity: 0, y: 80, scale: 0.95 });
-    gsap.set(cards[0], { opacity: 1, y: 0, scale: 1 });
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top top",
-        end: "+=200%",
-        scrub: true,
-        pin: true,
-      },
-    });
-
-    cards.forEach((card, i) => {
-      if (i === 0) return;
-
-      tl.to(cards[i - 1], {
-        opacity: 0,
-        scale: 0.9,
-        y: -50,
-      }).to(
-        card,
-        {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-        },
-        "<",
-      );
-    });
-  }, []);
-
   return (
-    <section className="work" id="work" ref={sectionRef}>
+    <section className="work" id="work">
       <p className="section-label">Selected Work</p>
 
       <div className="work__stack">
         {PROJECTS.map((project, i) => (
           <div
             key={project.id}
-            ref={(el) => (cardsRef.current[i] = el)}
             className="project project--stacked"
             onClick={() => onSelect(project)}
           >
@@ -194,16 +176,18 @@ function Work({ onSelect }) {
               <img src={project.image} alt={project.name} />
             </div>
 
-            <h3 className="project__name">{project.name}</h3>
+            <div className="project__meta">
+              <h3 className="project__name">{project.name}</h3>
+              <span className="project__year">{project.year}</span>
+            </div>
+
             <p className="project__stack">{project.lang}</p>
-            <p className="project__story">{project.story}</p>
           </div>
         ))}
       </div>
     </section>
   );
 }
-
 // ── SKILLS ───────────────────────────────────────────────────────────────────
 function Skills() {
   return (
