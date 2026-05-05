@@ -78,6 +78,7 @@ function Header() {
   return (
     <header className="header">
       <div className="header__inner">
+        <img src="/favicon.png" alt="Logo" className="w-8 rounded-full"/>
         <span className="header__logo">Portfolio</span>
       </div>
     </header>
@@ -120,7 +121,7 @@ function Hero() {
   );
 }
 
-// ── ABOUT SECTION (NEW 🔥) ───────────────────────────────────────────────────
+// ── ABOUT SECTION ───────────────────────────────────────────────────────────
 function About() {
   return (
     <section className="about" id="about">
@@ -159,7 +160,26 @@ function About() {
     </section>
   );
 }
-// ── WORK (FIXED STACK EFFECT) ───────────────────────────────────────────────
+
+// ── ⭐ UPDATED WORK (SCROLL POP OUT ANIMATION) ───────────────────────────────
+const cardVariant = {
+  hidden: {
+    opacity: 0,
+    y: 70,
+    scale: 0.9,
+  },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      delay: i * 0.1,
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  }),
+};
+
 function Work({ onSelect }) {
   return (
     <section className="work" id="work">
@@ -167,9 +187,19 @@ function Work({ onSelect }) {
 
       <div className="work__stack">
         {PROJECTS.map((project, i) => (
-          <div
+          <motion.div
             key={project.id}
             className="project project--stacked"
+            custom={i}
+            variants={cardVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            whileHover={{
+              scale: 1.04,
+              y: -10,
+              transition: { duration: 0.2 },
+            }}
             onClick={() => onSelect(project)}
           >
             <div className="project__thumbnail">
@@ -182,31 +212,33 @@ function Work({ onSelect }) {
             </div>
 
             <p className="project__stack">{project.lang}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
   );
 }
+
 // ── SKILLS ───────────────────────────────────────────────────────────────────
 function Skills() {
   return (
     <section className="skills" id="skills">
       <p className="section-label">Technical Stack</p>
-<div className="skills__list">
-  {SKILLS.map((skill, i) => (
-    <motion.div
-      key={skill.name}
-      className="skills__item"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: i * 0.08 }}
-    >
-      <span className="skills__icon">{skill.icon}</span>
-      <span>{skill.name}</span>
-    </motion.div>
-  ))}
-</div>    
+
+      <div className="skills__list">
+        {SKILLS.map((skill, i) => (
+          <motion.div
+            key={skill.name}
+            className="skills__item"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.08 }}
+          >
+            <span className="skills__icon">{skill.icon}</span>
+            <span>{skill.name}</span>
+          </motion.div>
+        ))}
+      </div>
     </section>
   );
 }
