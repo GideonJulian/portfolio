@@ -1,7 +1,19 @@
 import { useState, useEffect, useRef } from "react";
 import "./index.css";
 import ProjectSheet from "./components/ProjectSheet";
-import { FaReact, FaNodeJs, FaFigma, FaTools, FaGitAlt } from "react-icons/fa";
+
+import { motion } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {
+  FaUser,
+  FaBriefcase,
+  FaUsers,
+  FaBookOpen,
+  FaRocket,
+} from "react-icons/fa";
+
+import { FaReact, FaNodeJs, FaFigma } from "react-icons/fa";
 
 import {
   SiTailwindcss,
@@ -10,8 +22,8 @@ import {
   SiPostman,
   SiGreensock,
 } from "react-icons/si";
-import { motion } from "framer-motion";
-import gsap from "gsap";
+
+gsap.registerPlugin(ScrollTrigger);
 
 // ── Data ─────────────────────────────────────────────────────────────────────
 const PROJECTS = [
@@ -24,7 +36,7 @@ const PROJECTS = [
     image: "/pro1.jpg",
     year: 2024,
     story:
-      "This project started with a need for a fast and clean ecommerce experience.",
+      "Built for a fast, clean ecommerce experience focused on smooth UX and conversions.",
   },
   {
     id: 2,
@@ -35,18 +47,12 @@ const PROJECTS = [
     image: "/pro2.jpg",
     year: 2026,
     story:
-      "The client wanted something warm and expressive for showcasing handmade products.",
+      "Designed to feel warm and expressive, helping handmade products feel more personal and premium.",
   },
 ];
-const NAV_ITEMS = [
-  { label: "Work", href: "#work", icon: "folder_special" },
-  { label: "Skills", href: "#skills", icon: "terminal" },
-  { label: "About", href: "#about", icon: "fingerprint" },
-  { label: "Contact", href: "#contact", icon: "chat_bubble" },
-];
+
 const SKILLS = [
   { name: "React", icon: <FaReact /> },
-  { name: "React Native", icon: <FaReact /> },
   { name: "Node.js", icon: <FaNodeJs /> },
   { name: "Tailwind", icon: <SiTailwindcss /> },
   { name: "GSAP", icon: <SiGreensock /> },
@@ -55,6 +61,7 @@ const SKILLS = [
   { name: "MongoDB", icon: <SiMongodb /> },
   { name: "Postman", icon: <SiPostman /> },
 ];
+
 // ── Header ───────────────────────────────────────────────────────────────────
 function Header() {
   return (
@@ -66,7 +73,7 @@ function Header() {
   );
 }
 
-// ── Hero (fade + slide) ──────────────────────────────────────────────────────
+// ── Hero ─────────────────────────────────────────────────────────────────────
 function Hero() {
   return (
     <motion.section
@@ -78,12 +85,14 @@ function Hero() {
       <div className="hero__layout">
         <div className="hero__content">
           <h1 className="hero__name">Gideon Chinonso</h1>
-        <p className="hero__title">
-  Fullstack Developer building web & app experiences
-</p>
+
+          <p className="hero__title">
+            Fullstack Developer — Web & App Experiences
+          </p>
+
           <p className="hero__bio">
-            I build and collaborate on technical architectures with an editorial
-            focus—crafting systems that are both functional and considered
+            I build scalable systems with a focus on clean architecture,
+            performance, and thoughtful design.
           </p>
         </div>
 
@@ -100,64 +109,102 @@ function Hero() {
   );
 }
 
-// ── Work (GSAP scroll + hover animation) ─────────────────────────────────────
+// ── ABOUT SECTION (NEW 🔥) ───────────────────────────────────────────────────
+function About() {
+  return (
+    <section className="about" id="about">
+      <p className="section-label">About Me</p>
+
+      <div className="about__card">
+        <p className="about__text">
+          I’m an <strong>18-year-old Fullstack Developer</strong> with{" "}
+          <strong>3+ years</strong> of experience building modern web & app systems.
+        </p>
+
+        <p className="about__text">
+          I focus on <strong>collaboration</strong>, <strong>learning</strong>,
+          and building clean, scalable, high-performance digital products.
+        </p>
+
+        <div className="about__highlights">
+          <span><FaUser /> 18 Years</span>
+          <span><FaBriefcase /> 3+ Years Exp</span>
+          <span><FaUsers /> Collaboration</span>
+          <span><FaBookOpen /> Learning</span>
+          <span><FaRocket /> Problem Solving</span>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── WORK (GSAP SCROLL STACK EFFECT) ──────────────────────────────────────────
 function Work({ onSelect }) {
-  const ref = useRef();
+  const sectionRef = useRef();
+  const cardsRef = useRef([]);
 
   useEffect(() => {
-    gsap.fromTo(
-      ref.current.children,
-      { opacity: 0, y: 40 },
-      {
-        opacity: 1,
-        y: 0,
-        stagger: 0.15,
-        duration: 0.6,
-        scrollTrigger: {
-          trigger: ref.current,
-          start: "top 80%",
-        },
+    const cards = cardsRef.current;
+
+    gsap.set(cards, { opacity: 0, y: 80, scale: 0.95 });
+    gsap.set(cards[0], { opacity: 1, y: 0, scale: 1 });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top top",
+        end: "+=200%",
+        scrub: true,
+        pin: true,
       },
-    );
+    });
+
+    cards.forEach((card, i) => {
+      if (i === 0) return;
+
+      tl.to(cards[i - 1], {
+        opacity: 0,
+        scale: 0.9,
+        y: -50,
+      }).to(
+        card,
+        {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+        },
+        "<",
+      );
+    });
   }, []);
 
   return (
-    <section className="work" id="work">
+    <section className="work" id="work" ref={sectionRef}>
       <p className="section-label">Selected Work</p>
 
-      <div className="work__list" ref={ref}>
-        {PROJECTS.map((project) => (
-          <motion.article
+      <div className="work__stack">
+        {PROJECTS.map((project, i) => (
+          <div
             key={project.id}
-            className="project"
+            ref={(el) => (cardsRef.current[i] = el)}
+            className="project project--stacked"
             onClick={() => onSelect(project)}
-            whileHover={{ y: -6 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ type: "spring", stiffness: 200 }}
           >
             <div className="project__thumbnail">
-              <motion.img
-                src={project.image}
-                alt={project.name}
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.4 }}
-              />
+              <img src={project.image} alt={project.name} />
             </div>
 
-            <div className="project__meta">
-              <h3 className="project__name">{project.name}</h3>
-              <span className="project__year">{project.year}</span>
-            </div>
-
+            <h3 className="project__name">{project.name}</h3>
             <p className="project__stack">{project.lang}</p>
-          </motion.article>
+            <p className="project__story">{project.story}</p>
+          </div>
         ))}
       </div>
     </section>
   );
 }
 
-// ── Skills (fade in stagger) ─────────────────────────────────────────────────
+// ── SKILLS ───────────────────────────────────────────────────────────────────
 function Skills() {
   return (
     <section className="skills" id="skills">
@@ -165,35 +212,31 @@ function Skills() {
 
       <div className="skills__list">
         {SKILLS.map((skill, i) => (
-          <motion.span
+          <motion.div
             key={skill.name}
-            className="skills__item flex items-center gap-2 text-lg cursor-pointer"
+            className="skills__item"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.1 }}
           >
-            <span className="text-xl">{skill.icon}</span>
+            <span className="skills__icon">{skill.icon}</span>
             <span>{skill.name}</span>
-          </motion.span>
+          </motion.div>
         ))}
       </div>
     </section>
   );
 }
-// ── Contact (subtle hover polish) ────────────────────────────────────────────
+
+// ── CONTACT ──────────────────────────────────────────────────────────────────
 function Contact() {
   return (
     <section id="contact">
       <p className="section-label">Connect</p>
 
-      <div className="flex flex-col gap-4">
+      <div className="contact__links">
         {["Email", "LinkedIn", "GitHub"].map((item) => (
-          <motion.a
-            key={item}
-            href="#"
-            whileHover={{ x: 6 }}
-            className="text-xl"
-          >
+          <motion.a key={item} whileHover={{ x: 6 }} href="#">
             {item} ↗
           </motion.a>
         ))}
@@ -201,58 +244,67 @@ function Contact() {
     </section>
   );
 }
+
+// ── FOOTER ───────────────────────────────────────────────────────────────────
 function Footer() {
   return (
     <footer className="footer">
-      {" "}
-      <p>© {new Date().getFullYear()} Gideon Chinonso</p>{" "}
+      <p>© {new Date().getFullYear()} Gideon Chinonso</p>
     </footer>
   );
 }
+
+// ── BOTTOM NAV ───────────────────────────────────────────────────────────────
 function BottomNav() {
   const [active, setActive] = useState("work");
 
+  const items = [
+    { label: "Work", href: "#work", icon: "work" },
+    { label: "Skills", href: "#skills", icon: "code" },
+    { label: "About", href: "#about", icon: "person" },
+    { label: "Contact", href: "#contact", icon: "mail" },
+  ];
+
   return (
     <nav className="bottom-nav">
-      {NAV_ITEMS.map(({ label, href, icon }) => {
-        const id = label.toLowerCase();
-
-        return (
-          <a
-            key={id}
-            href={href}
-            onClick={() => setActive(id)}
-            className={`bottom-nav__item${
-              active === id ? " bottom-nav__item--active" : ""
-            }`}
-          >
-            <span className="bottom-nav__icon material-symbols-outlined">
-              {icon}
-            </span>
-
-            <span className="bottom-nav__label">{label}</span>
-          </a>
-        );
-      })}
+      {items.map((item) => (
+        <a
+          key={item.label}
+          href={item.href}
+          onClick={() => setActive(item.label.toLowerCase())}
+          className={`bottom-nav__item ${
+            active === item.label.toLowerCase()
+              ? "bottom-nav__item--active"
+              : ""
+          }`}
+        >
+          <span className="material-symbols-outlined">{item.icon}</span>
+          <span>{item.label}</span>
+        </a>
+      ))}
     </nav>
   );
 }
 
-// ── Root ─────────────────────────────────────────────────────────────────────
+// ── ROOT ─────────────────────────────────────────────────────────────────────
 export default function Portfolio() {
   const [selectedProject, setSelectedProject] = useState(null);
 
   return (
     <>
       <Header />
+
       <main className="main container">
         <Hero />
         <Work onSelect={setSelectedProject} />
+        <About />
         <Skills />
         <Contact />
       </main>
-      <Footer /> <BottomNav />
-      {/* Modal with animation */}
+
+      <Footer />
+      <BottomNav />
+
       <motion.div
         initial={false}
         animate={{ opacity: selectedProject ? 1 : 0 }}
