@@ -12,7 +12,6 @@ export default function ProjectSheet({ project, onClose }) {
     }, 300);
   }, [onClose]);
 
-  // ESC key
   useEffect(() => {
     if (!project) return;
     const handler = (e) => {
@@ -22,7 +21,6 @@ export default function ProjectSheet({ project, onClose }) {
     return () => window.removeEventListener("keydown", handler);
   }, [project, handleClose]);
 
-  // Lock scroll
   useEffect(() => {
     if (project) {
       document.body.classList.add("sheet-open");
@@ -50,7 +48,6 @@ export default function ProjectSheet({ project, onClose }) {
           </button>
         </div>
 
-        {/* Content */}
         <div className="sheet-body">
 
           {/* Header */}
@@ -64,19 +61,31 @@ export default function ProjectSheet({ project, onClose }) {
             <img src={project.image} alt={project.name} />
           </div>
 
+          {/* Story (NEW 🔥) */}
+          {project.story && (
+            <section className="sheet-section">
+              <h3 className="sheet-section-title">Story</h3>
+              <p className="sheet-text">{project.story}</p>
+            </section>
+          )}
+
           {/* Description */}
-          <p className="sheet-desc">
-            {project.desc}
-          </p>
+          <section className="sheet-section">
+            <h3 className="sheet-section-title">Overview</h3>
+            <p className="sheet-text">{project.desc}</p>
+          </section>
 
           {/* Stack */}
-          <div className="sheet-stack">
-            {project.lang.split("+").map((tech) => (
-              <span key={tech.trim()} className="sheet-tag">
-                {tech.trim()}
-              </span>
-            ))}
-          </div>
+          <section className="sheet-section">
+            <h3 className="sheet-section-title">Stack</h3>
+            <div className="sheet-stack">
+              {project.lang.split("+").map((tech) => (
+                <span key={tech.trim()} className="sheet-tag">
+                  {tech.trim()}
+                </span>
+              ))}
+            </div>
+          </section>
 
           {/* Divider */}
           <div className="sheet-divider" />
