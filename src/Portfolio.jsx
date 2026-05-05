@@ -1,7 +1,15 @@
 import { useState, useEffect, useRef } from "react";
 import "./index.css";
 import ProjectSheet from "./components/ProjectSheet";
+import { FaReact, FaNodeJs, FaFigma, FaTools, FaGitAlt } from "react-icons/fa";
 
+import {
+  SiTailwindcss,
+  SiSupabase,
+  SiMongodb,
+  SiPostman,
+  SiGreensock,
+} from "react-icons/si";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 
@@ -36,6 +44,17 @@ const NAV_ITEMS = [
   { label: "About", href: "#about", icon: "fingerprint" },
   { label: "Contact", href: "#contact", icon: "chat_bubble" },
 ];
+const SKILLS = [
+  { name: "React", icon: <FaReact /> },
+  { name: "React Native", icon: <FaReact /> },
+  { name: "Node.js", icon: <FaNodeJs /> },
+  { name: "Tailwind", icon: <SiTailwindcss /> },
+  { name: "GSAP", icon: <SiGreensock /> },
+  { name: "Figma", icon: <FaFigma /> },
+  { name: "Supabase", icon: <SiSupabase /> },
+  { name: "MongoDB", icon: <SiMongodb /> },
+  { name: "Postman", icon: <SiPostman /> },
+];
 // ── Header ───────────────────────────────────────────────────────────────────
 function Header() {
   return (
@@ -59,7 +78,9 @@ function Hero() {
       <div className="hero__layout">
         <div className="hero__content">
           <h1 className="hero__name">Gideon Chinonso</h1>
-          <p className="hero__title">Fullstack Developer</p>
+        <p className="hero__title">
+  Fullstack Developer building web & app experiences
+</p>
           <p className="hero__bio">
             I build and collaborate on technical architectures with an editorial
             focus—crafting systems that are both functional and considered
@@ -143,22 +164,22 @@ function Skills() {
       <p className="section-label">Technical Stack</p>
 
       <div className="skills__list">
-        {["React", "Node.js", "Tailwind", "GSAP"].map((skill, i) => (
+        {SKILLS.map((skill, i) => (
           <motion.span
-            key={skill}
-            className="skills__item"
+            key={skill.name}
+            className="skills__item flex items-center gap-2 text-lg cursor-pointer"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.1 }}
           >
-            {skill}
+            <span className="text-xl">{skill.icon}</span>
+            <span>{skill.name}</span>
           </motion.span>
         ))}
       </div>
     </section>
   );
 }
-
 // ── Contact (subtle hover polish) ────────────────────────────────────────────
 function Contact() {
   return (
