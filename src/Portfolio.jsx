@@ -217,8 +217,9 @@ function About() {
       <p className="section-label">Inquiry</p>
       <div className="about__body">
         <p>
-          My approach is rooted in the philosophy that software should be as
-          durable and well-considered as physical architecture.
+          I’m driven by collaboration, building meaningful things, and constant
+          learning approaching software with the same care and intention as
+          well-crafted architecture
         </p>
       </div>
     </section>
