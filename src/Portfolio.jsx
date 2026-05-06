@@ -131,13 +131,22 @@ function About() {
       <div className="about__card">
         <p className="about__text">
           I’m an <strong>18-year-old Fullstack Developer</strong> with{" "}
-          <strong>3+ years</strong> of experience building modern web & app
-          systems.
+          <strong>3+ years</strong> of experience. I started my coding journey at{" "}
+          <strong>age 15</strong> and have been <strong>self-taught</strong>,
+          learning through platforms like YouTube and freeCodeCamp.
         </p>
 
         <p className="about__text">
-          I focus on <strong>collaboration</strong>, <strong>learning</strong>,
-          and building clean, scalable, high-performance digital products.
+          Over time, I’ve built both <strong>web and mobile applications</strong>,
+          worked on <strong>solo projects</strong>, and collaborated with other
+          developers through programs like the <strong>HNG Internship</strong> and Other remote roles  to
+          deliver real-world products.
+        </p>
+
+        <p className="about__text">
+          I focus on <strong>collaboration</strong>, continuous{" "}
+          <strong>learning</strong>, and building clean, scalable, and
+          high-performance digital solutions.
         </p>
 
         <div className="about__highlights">
@@ -151,7 +160,7 @@ function About() {
             <FaUsers /> Collaboration
           </span>
           <span>
-            <FaBookOpen /> Learning
+            <FaBookOpen /> Self-Taught
           </span>
           <span>
             <FaRocket /> Problem Solving
