@@ -131,22 +131,32 @@ function About() {
       <div className="about__card">
         <p className="about__text">
           I’m an <strong>18-year-old Fullstack Developer</strong> with{" "}
-          <strong>3+ years</strong> of experience. I started my coding journey at{" "}
-          <strong>age 15</strong> and have been <strong>self-taught</strong>,
-          learning through platforms like YouTube and freeCodeCamp.
+          <strong>3+ years</strong> of experience building modern web & app systems.
         </p>
 
         <p className="about__text">
-          Over time, I’ve built both <strong>web and mobile applications</strong>,
-          worked on <strong>solo projects</strong>, and collaborated with other
-          developers through programs like the <strong>HNG Internship</strong> and Other remote roles  to
-          deliver real-world products.
+          I started coding at the <strong>age of 15</strong> and I’m proudly{" "}
+          <strong>self-taught</strong>, learning web and app development through
+          online resources like YouTube and FreeCodeCamp.
         </p>
 
         <p className="about__text">
-          I focus on <strong>collaboration</strong>, continuous{" "}
-          <strong>learning</strong>, and building clean, scalable, and
-          high-performance digital solutions.
+          I’ve gained hands-on experience through the{" "}
+          <strong>HNG Internship</strong> and other remote roles, collaborating with other developers to
+          build real-world web and mobile products, alongside developing my own
+          solo projects.
+        </p>
+
+        <p className="about__text">
+          I also enjoy <strong>posting tech content</strong> and sharing my journey
+          on platforms like TikTok —{" "}
+          <a
+            href="https://www.tiktok.com/@webcoder7"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <strong>@webcoder7</strong>
+          </a>.
         </p>
 
         <div className="about__highlights">
@@ -163,7 +173,7 @@ function About() {
             <FaBookOpen /> Self-Taught
           </span>
           <span>
-            <FaRocket /> Problem Solving
+            <FaRocket /> Building & Sharing
           </span>
         </div>
       </div>
