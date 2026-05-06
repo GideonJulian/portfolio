@@ -104,7 +104,7 @@ function Hero() {
           </p>
 
           <p className="hero__bio">
-            I build scalable systems with a focus on clean architecture,
+            I build scalable Web & App systems with a focus on clean architecture,
             performance, and thoughtful design.
           </p>
         </div>
