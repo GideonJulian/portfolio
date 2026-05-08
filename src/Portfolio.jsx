@@ -21,6 +21,8 @@ import {
   SiMongodb,
   SiPostman,
   SiGreensock,
+  SiAnthropic,
+  SiOpenai
 } from "react-icons/si";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -65,7 +67,9 @@ const PROJECTS = [
 const SKILLS = [
   { name: "React", icon: <FaReact /> },
   { name: "Node.js", icon: <FaNodeJs /> },
+  { name: "Claude", icon: <SiAnthropic /> },
   { name: "Tailwind", icon: <SiTailwindcss /> },
+    { name: "GPT 4o", icon: <SiOpenai /> },
   { name: "GSAP", icon: <SiGreensock /> },
   { name: "Figma", icon: <FaFigma /> },
   { name: "React Native", icon: <FaReact /> },
