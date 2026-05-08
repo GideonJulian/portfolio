@@ -22,7 +22,7 @@ import {
   SiPostman,
   SiGreensock,
   SiAnthropic,
-  SiOpenai
+  SiOpenai,
 } from "react-icons/si";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -69,7 +69,7 @@ const SKILLS = [
   { name: "Node.js", icon: <FaNodeJs /> },
   { name: "Claude", icon: <SiAnthropic /> },
   { name: "Tailwind", icon: <SiTailwindcss /> },
-    { name: "GPT 4o", icon: <SiOpenai /> },
+  { name: "GPT 4o", icon: <SiOpenai /> },
   { name: "GSAP", icon: <SiGreensock /> },
   { name: "Figma", icon: <FaFigma /> },
   { name: "React Native", icon: <FaReact /> },
@@ -108,8 +108,8 @@ function Hero() {
           </p>
 
           <p className="hero__bio">
-            I build scalable Web & App systems with a focus on clean architecture,
-            performance, and thoughtful design.
+            I build scalable Web & App systems with a focus on clean
+            architecture, performance, and thoughtful design.
           </p>
         </div>
 
@@ -135,7 +135,8 @@ function About() {
       <div className="about__card">
         <p className="about__text">
           I’m an <strong>18-year-old Fullstack Developer</strong> with{" "}
-          <strong>3+ years</strong> of experience building modern web & app systems.
+          <strong>3+ years</strong> of experience building modern web & app
+          systems.
         </p>
 
         <p className="about__text">
@@ -146,21 +147,22 @@ function About() {
 
         <p className="about__text">
           I’ve gained hands-on experience through the{" "}
-          <strong>HNG Internship</strong> and other remote roles, collaborating with other developers to
-          build real-world web and mobile products, alongside developing my own
-          solo projects.
+          <strong>HNG Internship</strong> and other remote roles, collaborating
+          with other developers to build real-world web and mobile products,
+          alongside developing my own solo projects.
         </p>
 
         <p className="about__text">
-          I also enjoy <strong>posting tech content</strong> and sharing my journey
-          on platforms like TikTok —{" "}
+          I also enjoy <strong>posting tech content</strong> and sharing my
+          journey on platforms like TikTok —{" "}
           <a
             href="https://www.tiktok.com/@webcoder7"
             target="_blank"
             rel="noopener noreferrer"
           >
             <strong>@webcoder7</strong>
-          </a>.
+          </a>
+          .
         </p>
 
         <div className="about__highlights">
