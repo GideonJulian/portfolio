@@ -29,13 +29,21 @@ body.sheet-open {
 }
 
 @keyframes overlay-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes overlay-out {
-  from { opacity: 1; }
-  to { opacity: 0; }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 /* ── Sheet Panel ── */
@@ -68,13 +76,21 @@ body.sheet-open {
 }
 
 @keyframes sheet-up {
-  from { transform: translateY(100%); }
-  to { transform: translateY(0); }
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 @keyframes sheet-down {
-  from { transform: translateY(0); }
-  to { transform: translateY(100%); }
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
 }
 
 /* ── Top Bar ── */
@@ -160,7 +176,7 @@ body.sheet-open {
 /* ── Image FIX (MAIN FIX) ── */
 .sheet-image-wrap {
   width: 100%;
-  max-height: 60vh;      /* ✅ prevents overflow */
+  max-height: 60vh; /* ✅ prevents overflow */
   overflow: hidden;
 
   background-color: #ece8e2;
@@ -173,10 +189,10 @@ body.sheet-open {
 
 .sheet-image-wrap img {
   width: 100%;
-  height: auto;          /* ✅ keeps full image visible */
+  height: auto; /* ✅ keeps full image visible */
   max-height: 60vh;
 
-  object-fit: contain;   /* ✅ IMPORTANT FIX (no cropping) */
+  object-fit: contain; /* ✅ IMPORTANT FIX (no cropping) */
 
   display: block;
 
@@ -249,7 +265,7 @@ body.sheet-open {
 }
 
 .sheet-actions a:hover {
-  color: #4F7942;
+  color: #4f7942;
 }
 
 /* ── Mobile Fix ── */
