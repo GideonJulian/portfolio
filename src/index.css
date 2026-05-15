@@ -1,31 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined...');
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined...");
 @import "tailwindcss";
 /* ── CSS Variables ── */
 :root {
-  --bg:                  #fdf9f3;
-  --surface:             #f7f3ed;
-  --surface-high:        #ece8e2;
-  --border:              #c4c7c7;
-  --text:                #1c1c18;
-  --text-secondary:      #5f5e5b;
-  --text-muted:          #747878;
-  --accent:              #4F7942;
-  --accent-hover:        #3d6133;
-  --font-serif:          'Newsreader', Georgia, serif;
-  --font-sans:           'Manrope', sans-serif;
+  --bg: #fdf9f3;
+  --surface: #f7f3ed;
+  --surface-high: #ece8e2;
+  --border: #c4c7c7;
+  --text: #1c1c18;
+  --text-secondary: #5f5e5b;
+  --text-muted: #747878;
+  --accent: #4f7942;
+  --accent-hover: #3d6133;
+  --font-serif: "Newsreader", Georgia, serif;
+  --font-sans: "Manrope", sans-serif;
 
   /* spacing */
-  --stack-sm:   16px;
-  --stack-md:   32px;
-  --stack-lg:   64px;
-  --stack-xl:   128px;
+  --stack-sm: 16px;
+  --stack-md: 32px;
+  --stack-lg: 64px;
+  --stack-xl: 128px;
 }
 
 /* ── Reset / Base ── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; overflow-x: hidden; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 body {
   background-color: var(--bg);
   color: var(--text);
@@ -36,7 +45,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-a { color: inherit; text-decoration: none; }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
 /* ── Layout ── */
 .container {
@@ -145,14 +157,13 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden;
   background-color: var(--surface-high);
   position: relative;
-  
 }
 
 .hero__image-wrap::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
   border-radius: 4px;
   pointer-events: none;
 }
@@ -197,8 +208,8 @@ a { color: inherit; text-decoration: none; }
   width: 100%;
   height: 100%;
   object-fit: contain; /* ✅ show full image */
-  background: #fff;     /* ✅ prevents empty space looking broken */
-  filter: none;         /* ✅ no black/gray on load */
+  background: #fff; /* ✅ prevents empty space looking broken */
+  filter: none; /* ✅ no black/gray on load */
   transition: transform 0.4s ease;
   display: block;
 }
@@ -269,7 +280,9 @@ a { color: inherit; text-decoration: none; }
   font-size: 14px;
   font-weight: 500;
 
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
 }
 
 .skills__item:hover {
@@ -284,9 +297,9 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
   justify-content: center;
 }
-/* ── About ── */  
+/* ── About ── */
 .about {
-margin-bottom: var(--stack-xl);
+  margin-bottom: var(--stack-xl);
 }
 
 .about__card {
@@ -300,7 +313,9 @@ margin-bottom: var(--stack-xl);
   flex-direction: column;
   gap: 18px;
 
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .about__card:hover {
@@ -376,7 +391,7 @@ margin-bottom: var(--stack-xl);
 }
 
 .contact__link::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 0;
   height: 1px;
@@ -467,7 +482,9 @@ margin-bottom: var(--stack-xl);
   border-top: 2px solid transparent;
   color: var(--text-muted);
   text-decoration: none;
-  transition: color 0.15s ease, transform 0.1s ease;
+  transition:
+    color 0.15s ease,
+    transform 0.1s ease;
   gap: 2px;
 }
 
@@ -485,12 +502,16 @@ margin-bottom: var(--stack-xl);
 }
 
 .bottom-nav__icon {
-  font-family: 'Material Symbols Outlined';
+  font-family: "Material Symbols Outlined";
   font-size: 24px;
   font-weight: 400;
   font-style: normal;
   line-height: 1;
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
 }
 
 .bottom-nav__label {
