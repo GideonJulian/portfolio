@@ -31,6 +31,17 @@ gsap.registerPlugin(ScrollTrigger);
 const PROJECTS = [
   {
     id: 1,
+    name: "TrackR",
+    desc: "A Web Application built to Track and help you stay organized while you’re applying for jobs.",
+    lang: "React.js + Node.js + Express, MongoDB + TailwindCSS + Framer",
+    link: "https://trackr-sepia.vercel.app/",
+    image: "/pro8.png",
+    year: 2026,
+    story:
+      "Trackr is like your personal job-search notebook that actually keeps everything in order. Instead of digging through tabs and scattered notes, you just drop every job you apply to into one clean dashboard and watch your progress unfold. It quietly keeps track of applications, interviews, and follow-ups so you can focus more on landing the job and less on the chaos.",
+  },
+  {
+    id: 2,
     name: "Anon",
     desc: "An online Ecommerce store created with",
     lang: "React.js + Node.js + TailwindCSS",
