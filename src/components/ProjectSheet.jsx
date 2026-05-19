@@ -64,7 +64,7 @@ export default function ProjectSheet({ project, onClose }) {
           {/* Story (NEW 🔥) */}
           {project.story && (
             <section className="sheet-section">
-              <h3 className="sheet-section-title">Story</h3>
+              <h3 className="sheet-section-title">Context</h3>
               <p className="sheet-text">{project.story}</p>
             </section>
           )}
